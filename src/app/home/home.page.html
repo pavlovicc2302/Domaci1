@@ -13,8 +13,19 @@
     </ion-toolbar>
   </ion-header>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+  <ion-list *ngFor="let book of books">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>{{book.title}}</ion-card-title>
+      <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
+      <ion-item>
+        
+      </ion-item>
+    </ion-card-header>
+  
+    <ion-card-content>
+      Here's a small text description for the card content. Nothing more, nothing less.
+    </ion-card-content>
+  </ion-card>
+</ion-list>
 </ion-content>
