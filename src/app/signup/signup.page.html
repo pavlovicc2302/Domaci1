@@ -1,0 +1,46 @@
+<ion-content [fullscreen]="true">
+
+  <ion-header [translucent]="true">
+    <ion-toolbar>
+      <ion-title style="font-size: 28px;" >Dobrodosli!</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <form [formGroup]="regForm" novalidate>
+    <p class="subtitle"> Kreirajte svoj nalog!</p>
+
+    <div class="ion-padding">
+      <ion-item>
+        <ion-input formControlName="fullname" class="input" placeholder="Ime"></ion-input>
+        <ion-icon name="person-outline"></ion-icon>
+      </ion-item>
+      <div *ngIf="this.regForm.controls?.['fullname'].touched && this.regForm.controls?.['fullname'].invalid">
+        <ion-text > Ime je obavezno! </ion-text>
+      </div>
+      <br>
+      <ion-item>
+        <ion-input formControlName="email" class="input" placeholder="Email"></ion-input>
+        <ion-icon name="person-outline"></ion-icon>
+      </ion-item>
+      <div *ngIf="this.regForm.controls?.['email'].touched && this.regForm.controls?.['email'].invalid">
+        <ion-text > Nije dobar unos email-a! </ion-text>
+      </div>
+      <br>
+      <ion-item>
+        <ion-input formControlName="password" class="input" placeholder="Lozinka"></ion-input>
+        <ion-icon name="person-outline"></ion-icon>
+      </ion-item>
+      <div *ngIf="this.regForm.controls?.['password'].touched && this.regForm.controls?.['password'].invalid">
+        <ion-text > Lozinka mora da ima bar jedan karakter, jedno veliko slovo, jedan broj! </ion-text>
+      </div>
+    <div class="signinLink">
+      <p> Postojeci korisnik? <a [routerLink]="['/login']"> Prijavite se!</a></p>
+    </div>
+    </div>
+    <ion-fab vertical="bottom" horizontal="end"> 
+      <ion-fab-button (click)="signUp()">
+        <ion-icon name="chevron-forward"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+  </form>
+  </ion-content>

@@ -1,0 +1,44 @@
+.input{
+    font-size: 300;
+}
+
+ion-item{
+    --background: rgb(206, 199, 199);
+    border-radius: 10px;
+    margin-bottom:16px;
+}
+
+.subtitle{
+    font-size:0.9rem;
+    color:gray;
+    text-align: center;
+}
+
+.signinLink{
+  display:flex;
+  margin:auto;
+  flex-direction: row;  
+  align-content: center;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 80%;
+  right: 0;
+  justify-content: center;
+  p{
+    font-size: 0.9rem;
+  }
+
+  a{
+    text-decoration: none;
+  }
+}
+
+.forgotPassword{
+    justify-content: flex-end;
+    a{
+        font-weight: bold;
+        font-size: 0.9rem;
+        text-decoration: none;
+    }
+}

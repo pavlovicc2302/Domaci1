@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Blank
+      Knjižara
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -14,17 +14,23 @@
   </ion-header>
 
   <ion-list *ngFor="let book of books">
-  <ion-card>
+  <ion-card style="background-color: beige">
     <ion-card-header>
       <ion-card-title>{{book.title}}</ion-card-title>
       <ion-card-subtitle>Autor: {{book.author}}</ion-card-subtitle>
       <ion-item>
-        
+        <ion-label >Izdavač: {{book.publisher}}</ion-label>
+        <ion-label></ion-label>
       </ion-item>
     </ion-card-header>
   
     <ion-card-content>
-      Here's a small text description for the card content. Nothing more, nothing less.
+      <b>Kratak opis:</b><br>{{book.description}} 
+
+      <ion-row> 
+        <ion-button> Izmeni</ion-button>
+        <ion-button> Izbrisi</ion-button>
+      </ion-row>
     </ion-card-content>
   </ion-card>
 </ion-list>

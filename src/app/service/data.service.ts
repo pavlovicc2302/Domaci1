@@ -10,6 +10,7 @@ export interface Task{
   publisher:string;
   title:string;
   quantity:number;
+  description: string;
 }
 
 @Injectable({

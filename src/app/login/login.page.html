@@ -1,0 +1,39 @@
+<ion-content [fullscreen]="true">
+
+  <ion-header [translucent]="true">
+    <ion-toolbar>
+      <ion-title clas="title" style="font-size: 28px;">Dobrodosli nazad!</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <form [formGroup]="loginForm">
+    <p class="subtitle"> Prijavite se na svoj nalog!</p>
+    <div class="ion-padding">
+      <ion-item>
+        <ion-input formControlName="email" placeholder="Email"></ion-input>
+        <ion-icon name="person-outline"></ion-icon>
+      </ion-item>
+      <div *ngIf="this.loginForm.controls?.['email'].touched && this.loginForm.controls?.['email'].invalid">
+        <ion-text > Nije dobar unos email-a! </ion-text>
+      </div>
+      <ion-item>
+        <ion-input formControlName="password" placeholder="Lozinka"></ion-input>
+        <ion-icon name="lock-closed-outline"></ion-icon>
+      </ion-item>
+      <div *ngIf="this.loginForm.controls?.['password'].touched && this.loginForm.controls?.['password'].invalid">
+        <ion-text > Lozinka mora da ima bar jedan karakter, jedno veliko slovo, jedan broj! </ion-text>
+      </div>
+      <div class="forgotPassword">
+        <a [routerLink]="['/reset-password']"> Zaboravljena lozinka?</a>
+      </div>
+    <div class="signupLink">
+      <p> Novi korisnik? <a [routerLink]="['/signup']"> Kreirajte nalog!</a></p>
+    </div>
+    </div>
+    <ion-fab vertical="bottom" horizontal="end"> 
+      <ion-fab-button (click)="logIn()">
+        <ion-icon name="chevron-forward"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+  </form>
+  </ion-content>
