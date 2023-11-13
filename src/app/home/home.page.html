@@ -24,7 +24,7 @@
       <b>Kratak opis:</b><br>{{book.description}} <br><br>
       <b style="font-size: 1rem;">Cena: {{book.price}} </b>
       <ion-row> 
-        <ion-button> Izmeni</ion-button>
+        <ion-button (click)="goToUpdatePage(book)"> Izmeni</ion-button>
         <ion-button (click)="deleteBook(book)"> Izbriši</ion-button>
       </ion-row>
     </ion-card-content>

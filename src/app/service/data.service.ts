@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 
-import {collection, Firestore, collectionData, doc, addDoc, deleteDoc} from '@angular/fire/firestore';
+import {collection, Firestore, collectionData, doc, addDoc, deleteDoc, updateDoc} from '@angular/fire/firestore';
+
+// import {updateDoc} from 'firebase/firestore';
 
 export interface Book{
   id?:number;
@@ -33,5 +35,18 @@ export class DataService {
   deleteBook(book:Book){
     const bookRef=doc(this.firestore,`books/${book.id}`);
     return deleteDoc(bookRef);
+  }
+
+  updateBook(book: Book){
+    const bookRef=doc(this.firestore,`books/${book.id}`);
+    return updateDoc(bookRef,{
+      author:book.author,
+      price:book.price,
+      publishYear:book.publishYear,
+      publisher:book.publisher,
+      title:book.title,
+      quantity:book.quantity,
+      description: book.description,
+    });
   }
 }

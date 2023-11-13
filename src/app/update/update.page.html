@@ -1,13 +1,43 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>update</ion-title>
+    <ion-title>
+      <h1>Izmena knjige</h1>
+      <p><ion-icon name="close-circle-outline" (click)="dismiss()"></ion-icon></p>
+    </ion-title>
+
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">update</ion-title>
-    </ion-toolbar>
-  </ion-header>
+      <ion-card>
+        <ion-card-content>
+          <ion-item>
+            <ion-textarea label="Naslov knjige:"  [(ngModel)]="book.title"></ion-textarea>
+          </ion-item>
+          <ion-item>
+            <ion-textarea label="Ime autora:"  [(ngModel)]="book.author"></ion-textarea>
+          </ion-item>
+          <ion-item>
+            <ion-textarea label="Kratak opis:" [(ngModel)]="book.description"></ion-textarea>
+          </ion-item>
+          <ion-item>
+            <ion-select label="Izdavač:" [(ngModel)]="book.publisher">
+              <ion-select-option value="Vulkan">Vulkan</ion-select-option>
+              <ion-select-option value="Laguna">Laguna</ion-select-option>
+            </ion-select>
+          </ion-item>
+          <ion-item>
+            <ion-textarea label="Godina izdavanja knjige:"  [(ngModel)]="book.publishYear"></ion-textarea>
+          </ion-item>
+          <ion-item>
+            <ion-textarea label="Cena knjige:"  [(ngModel)]="book.price"></ion-textarea>
+          </ion-item>
+          <ion-item>
+            <ion-textarea label="Broj primeraka:"  [(ngModel)]="book.quantity"></ion-textarea>
+          </ion-item>
+    
+            <ion-button expand="full" (click)="updateBook()">Izmenite knjigu</ion-button>
+    
+        </ion-card-content>
+  </ion-card>
 </ion-content>

@@ -1,8 +1,10 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
-import { DataService } from '../service/data.service';
+import { Book, DataService } from '../service/data.service';
 import {Subscription} from 'rxjs';
 import { CreatePage } from '../create/create.page';
+import { UpdatePage } from '../update/update.page';
+
 
 @Component({
   selector: 'app-home',
@@ -38,6 +40,15 @@ export class HomePage implements OnInit, OnDestroy{
 
   async deleteBook(book: any){
     await this.dataService.deleteBook(book);
+  }
+
+  async goToUpdatePage(book: Book){
+    const modal = await this.modalCtrl.create({
+      component: UpdatePage,
+      componentProps:{book}
+    })
+    console.log(book)
+    return await modal.present();
   }
 
 }
