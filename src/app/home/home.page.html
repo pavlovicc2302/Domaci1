@@ -22,7 +22,7 @@
   
     <ion-card-content>
       <b>Kratak opis:</b><br>{{book.description}} <br><br>
-      <b style="font-size: 1.7rem;">Cena: {{book.price}} </b>
+      <b style="font-size: 1rem;">Cena: {{book.price}} </b>
       <ion-row> 
         <ion-button> Izmeni</ion-button>
         <ion-button (click)="deleteBook(book)"> Izbriši</ion-button>
@@ -33,6 +33,7 @@
       <ion-label> <b>Godina izdavanja:</b> {{book.publishYear}}</ion-label>
     </ion-item>
   </ion-card>
+  
 </ion-list>
 </ion-content>
 
