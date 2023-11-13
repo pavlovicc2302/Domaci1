@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 
-import {collection, Firestore, collectionData, doc} from '@angular/fire/firestore';
+import {collection, Firestore, collectionData, doc, addDoc, deleteDoc} from '@angular/fire/firestore';
 
-export interface Task{
+export interface Book{
   id?:number;
   author:string;
   price:string;
@@ -20,8 +20,18 @@ export class DataService {
 
   constructor(private firestore:Firestore) { }
 
-  getTasks(){
-    const tasksRef=collection(this.firestore,'books');
-    return collectionData(tasksRef,{idField:'id'});
+  getBooks(){
+    const booksRef=collection(this.firestore,'books');
+    return collectionData(booksRef,{idField:'id'});
+  }
+
+  addBook(book:Book){
+    const booksRef = collection(this.firestore,'books');
+    return addDoc(booksRef,book);
+  }
+
+  deleteBook(book:Book){
+    const bookRef=doc(this.firestore,`books/${book.id}`);
+    return deleteDoc(bookRef);
   }
 }

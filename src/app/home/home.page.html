@@ -9,7 +9,7 @@
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Aplikacija</ion-title>
+      <ion-title size="large">Knjižara</ion-title>
     </ion-toolbar>
   </ion-header>
 
@@ -26,10 +26,9 @@
   
     <ion-card-content>
       <b>Kratak opis:</b><br>{{book.description}} 
-
       <ion-row> 
         <ion-button> Izmeni</ion-button>
-        <ion-button> Izbrisi</ion-button>
+        <ion-button (click)="deleteBook(book)"> Izbrisi</ion-button>
       </ion-row>
     </ion-card-content>
   </ion-card>
@@ -37,7 +36,7 @@
 </ion-content>
 
 <ion-fab vertical="bottom" horizontal="end">
-  <ion-fab-button > <!-- fali funkcija za dodavaje -->
+  <ion-fab-button (click)="gotoCreatePage()"> <!-- fali funkcija za dodavaje -->
     <ion-icon name="add">Add</ion-icon>
   </ion-fab-button>
 </ion-fab>

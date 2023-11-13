@@ -2,6 +2,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 import { DataService } from '../service/data.service';
 import {Subscription} from 'rxjs';
+import { CreatePage } from '../create/create.page';
 
 @Component({
   selector: 'app-home',
@@ -22,9 +23,21 @@ export class HomePage implements OnInit, OnDestroy{
   }
 
   async getData(){
-    this.sub=this.dataService.getTasks().subscribe((res)=> {
+    this.sub=this.dataService.getBooks().subscribe((res)=> {
       this.books = res;
       console.log(this.books);
     })
   }
+
+  async gotoCreatePage(){
+    const modal = await this.modalCtrl.create({
+      component: CreatePage
+    })
+    return await modal.present();
+  }
+
+  async deleteBook(book: any){
+    await this.dataService.deleteBook(book);
+  }
+
 }
