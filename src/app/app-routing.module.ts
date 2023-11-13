@@ -26,12 +26,7 @@ const routes: Routes = [
   {
     path: 'update',
     loadChildren: () => import('./update/update.module').then( m => m.UpdatePageModule)
-  },
-  {
-    path: 'landing',
-    loadChildren: () => import('./landing/landing.module').then( m => m.LandingPageModule)
-  },
-
+  }
 
 ];
 

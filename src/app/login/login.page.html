@@ -20,9 +20,6 @@
         <ion-input type="password" formControlName="password" placeholder="Lozinka"></ion-input>
         <ion-icon name="lock-closed-outline"></ion-icon>
       </ion-item>
-      <div *ngIf="this.loginForm.controls?.['password'].touched && this.loginForm.controls?.['password'].invalid">
-        <ion-text class="warning"> Lozinka mora da ima bar jedan karakter, jedno veliko slovo, jedan broj! </ion-text>
-      </div>
 
     <div class="signupLink">
       <p> Novi korisnik? <a [routerLink]="['/signup']"> Kreirajte nalog!</a></p>

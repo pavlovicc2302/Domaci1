@@ -27,12 +27,10 @@
       </div>
       <br>
       <ion-item>
-        <ion-input formControlName="password" class="input" placeholder="Lozinka"></ion-input>
+        <ion-input type="password" formControlName="password" class="input" placeholder="Lozinka"></ion-input>
         <ion-icon name="lock-closed-outline"></ion-icon>
       </ion-item>
-      <div *ngIf="this.regForm.controls?.['password'].touched && this.regForm.controls?.['password'].invalid">
-        <ion-text class="warning"> Lozinka mora da ima bar jedan karakter, jedno veliko slovo, jedan broj! </ion-text>
-      </div>
+     
     <div class="signinLink">
       <p> Postojeći korisnik? <a [routerLink]="['/login']"> Prijavite se!</a></p>
     </div>
