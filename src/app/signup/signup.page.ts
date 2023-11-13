@@ -41,6 +41,9 @@ export class SignupPage implements OnInit {
       }else{
         console.log('nije dobro');
       }
+    }else{
+      loading.dismiss();
+      this.router.navigate(['/signup']);
     }
     
   }

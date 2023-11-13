@@ -1,3 +1,32 @@
+.naslov{
+  text-align: center;
+  font-size:xx-large;
+  color:black;
+}
+
+ion-card{
+  ion-card-title{
+    font-weight: bold;
+    color:black;
+  }
+
+  ion-card-subtitle{
+    font-weight: bold;
+    font-style:italic;
+    color:rgb(19, 18, 18);
+  }
+
+  ion-card-content{
+    color:rgb(51, 46, 46);
+  }
+}
+
+.publish{
+  --background:#ebb998;
+  font-size: 0.9rem;
+}
+
+
 #container {
   text-align: center;
 
@@ -16,9 +45,6 @@
 #container p {
   font-size: 16px;
   line-height: 22px;
-
-  color: #8c8c8c;
-
   margin: 0;
 }
 

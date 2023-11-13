@@ -1,6 +1,6 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
+  <ion-toolbar style="--background-color:red">
+    <ion-title class="naslov">
       Knjižara
     </ion-title>
   </ion-toolbar>
@@ -9,34 +9,35 @@
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Knjižara</ion-title>
+      <ion-title class="naslov" >Knjižara</ion-title>
     </ion-toolbar>
   </ion-header>
 
   <ion-list *ngFor="let book of books">
-  <ion-card style="background-color: beige">
+  <ion-card style="background-color: rgb(252, 227, 182)">
     <ion-card-header>
       <ion-card-title>{{book.title}}</ion-card-title>
       <ion-card-subtitle>Autor: {{book.author}}</ion-card-subtitle>
-      <ion-item>
-        <ion-label >Izdavač: {{book.publisher}}</ion-label>
-        <ion-label></ion-label>
-      </ion-item>
     </ion-card-header>
   
     <ion-card-content>
-      <b>Kratak opis:</b><br>{{book.description}} 
+      <b>Kratak opis:</b><br>{{book.description}} <br><br>
+      <b>Cena: </b>{{book.price}}
       <ion-row> 
         <ion-button> Izmeni</ion-button>
-        <ion-button (click)="deleteBook(book)"> Izbrisi</ion-button>
+        <ion-button (click)="deleteBook(book)"> Izbriši</ion-button>
       </ion-row>
     </ion-card-content>
+    <ion-item class="publish">
+      <ion-label><b>Izdavač</b>: {{book.publisher}}&nbsp;</ion-label>
+      <ion-label> <b>Godina izdavanja:</b> {{book.publishYear}}</ion-label>
+    </ion-item>
   </ion-card>
 </ion-list>
 </ion-content>
 
 <ion-fab vertical="bottom" horizontal="end">
-  <ion-fab-button (click)="gotoCreatePage()"> <!-- fali funkcija za dodavaje -->
-    <ion-icon name="add">Add</ion-icon>
-  </ion-fab-button>
+  <ion-fab-button (click)="gotoCreatePage()">
+    <ion-icon name="book-outline"></ion-icon>
+    </ion-fab-button>
 </ion-fab>

@@ -15,29 +15,28 @@
         <ion-textarea label="Naslov knjige"  [(ngModel)]="bookTitle"></ion-textarea>
       </ion-item>
       <ion-item>
-        <ion-textarea label="Ime autora"  [(ngModel)]="bookAuthor"></ion-textarea>
+        <ion-textarea label="Ime autora:"  [(ngModel)]="bookAuthor"></ion-textarea>
       </ion-item>
       <ion-item>
         <ion-textarea label="Kratak opis:" [(ngModel)]="bookDescription"></ion-textarea>
       </ion-item>
       <ion-item>
-        <ion-select label="Izdavac" [(ngModel)]="bookPublisher">
+        <ion-select label="Izdavač:" [(ngModel)]="bookPublisher">
           <ion-select-option value="vulkan">Vulkan</ion-select-option>
           <ion-select-option value="laguna">Laguna</ion-select-option>
         </ion-select>
       </ion-item>
       <ion-item>
-        <ion-textarea label="Godina izdavanja knjige"  [(ngModel)]="bookPublishYear"></ion-textarea>
+        <ion-textarea label="Godina izdavanja knjige:"  [(ngModel)]="bookPublishYear"></ion-textarea>
       </ion-item>
       <ion-item>
-        <ion-textarea label="Cena knjige"  [(ngModel)]="bookPrice"></ion-textarea>
+        <ion-textarea label="Cena knjige:"  [(ngModel)]="bookPrice"></ion-textarea>
       </ion-item>
       <ion-item>
-        <ion-textarea label="Broj primera"  [(ngModel)]="bookQuantity"></ion-textarea>
+        <ion-textarea label="Broj primeraka:"  [(ngModel)]="bookQuantity"></ion-textarea>
       </ion-item>
-      <ion-item>
+
         <ion-button expand="full" (click)="addBook()">Dodajte knjigu</ion-button>
-      </ion-item>
 
     </ion-card-content>
   </ion-card>
