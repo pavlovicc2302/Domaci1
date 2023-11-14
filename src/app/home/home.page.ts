@@ -4,6 +4,8 @@ import { Book, DataService } from '../service/data.service';
 import {Subscription} from 'rxjs';
 import { CreatePage } from '../create/create.page';
 import { UpdatePage } from '../update/update.page';
+import { AutheticationService } from '../service/authetication.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -16,7 +18,7 @@ export class HomePage implements OnInit, OnDestroy{
   books:any;
   sub:Subscription = new Subscription;
 
-  constructor(public modalCtrl:ModalController, private dataService:DataService) {}
+  constructor(public modalCtrl:ModalController, private dataService:DataService, public AuthService: AutheticationService, public router: Router) {}
   ngOnInit(): void {
     this.getData();
   }
@@ -49,6 +51,12 @@ export class HomePage implements OnInit, OnDestroy{
     })
     console.log(book)
     return await modal.present();
+  }
+
+  async logout(){
+    this.AuthService.logOut().then(()=> {
+      this.router.navigate(['/login']);
+    })
   }
 
 }

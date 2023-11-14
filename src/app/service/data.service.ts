@@ -2,8 +2,6 @@ import { Injectable } from '@angular/core';
 
 import {collection, Firestore, collectionData, doc, addDoc, deleteDoc, updateDoc} from '@angular/fire/firestore';
 
-// import {updateDoc} from 'firebase/firestore';
-
 export interface Book{
   id?:number;
   author:string;

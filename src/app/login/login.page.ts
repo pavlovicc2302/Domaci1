@@ -35,7 +35,7 @@ export class LoginPage implements OnInit {
 
       if(user){
         loading.dismiss();
-        this.router.navigate(['/home']); // ako je sve okej, prebaci se na home stranicu
+        this.router.navigate(['/home']); 
       }else{
         console.log("greska");
       }
